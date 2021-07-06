@@ -6,9 +6,13 @@ for c in range(0, 5):
     vet.append(num)
 print(vet)
 
-noot_repeated = list()
-for i in vet:
-    if i not in noot_repeated:
-        noot_repeated.append(i)
-    noot_repeated.sort()
-print(noot_repeated)        
+def noot_repeated(lista):
+    nova = list()
+    for i in lista:
+        if i not in nova:
+            nova.append(i)
+    nova.sort()
+    return nova    
+
+vet = noot_repeated(vet)
+print(vet)    
