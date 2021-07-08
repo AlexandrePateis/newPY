@@ -27,7 +27,7 @@ for value in new_int:
     #print(f'{value} * {aux} = {result}')
     soma = soma + result
     aux = aux -1
-print(soma)
+#print(soma)
 
 digit_01 = 11 -(soma % 11) 
 if digit_01>9:
@@ -58,7 +58,10 @@ new_int_final = ''.join(new_int_final)
 new_int_final = int(new_int_final)
 print(cpf)
 print(new_int_final)
-if cpf == new_int_final:
+cpf = str(cpf)
+new_int_final = str(new_int_final)
+sequency = new_int_final == str(new_int_final[0]) * 11
+if cpf == new_int_final and not sequency:
     print('CPF VALID !!!!')
 else:
     print('CPF INVALID !!')    
