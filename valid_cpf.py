@@ -24,7 +24,7 @@ for value in new:
     new_int.append(int(value))
 for value in new_int:
     result = value * aux
-    print(f'{value} * {aux} = {result}')
+    #print(f'{value} * {aux} = {result}')
     soma = soma + result
     aux = aux -1
 print(soma)
@@ -41,12 +41,14 @@ result = 0
 aux = 11
 for value in new_int:
     result = value * aux
-    print(f'{value} * {aux} = {result}')
+    #print(f'{value} * {aux} = {result}')
     soma = soma + result
     aux = aux -1
-digit_02 = 11 - (343 % 11)
-new_int.append(digit_02)
-#print(new_int)   
+digit_02 = 11 - (soma % 11)
+if digit_02>9:
+    new_int.append(0)
+else:
+    new_int.append(digit_02)  
 new_int_final=[]
 for value in new_int:
     new_int_final.append(str(value))
