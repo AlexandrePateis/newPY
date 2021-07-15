@@ -3,6 +3,8 @@ from random import randint
 list1 = list()
 list2 = list()
 
+
+
 while True:
     while True:
         my = int(input('Enter a number from 1 to 60: '))
@@ -24,9 +26,9 @@ while True:
 os.system('clear')
 list2.sort()
 list1.sort()
-print(f'Essa é a sua {list2}')
-print(f'Essa é a sorteada {list1}')       
+print(f'This is your list {list2}')
+print(f'This is the sorted list {list1}')       
 
-for c in list1:
-    if c in list2:
-        print(c, end=',')
+new = [valor for valor in list1 if valor in list2]
+
+print(new)
