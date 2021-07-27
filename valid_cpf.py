@@ -1,67 +1,29 @@
-aux = 10
-soma = 0
-result = 0
-def think_size(x):                  #Função que calcula o tamanho do número, e retorna essa valor
-    a = str(x)
-    if len(a) > 1:
-        if a[0] == '0':
-            return len(a) - 1
-        else:
-            return len(a)
-    return len(a)
-
+worklist = []
+del_worklist = []
+print('Options: ')
+print('1 - Add task. ')
+print('2 - Remove task. ')
+print('3 - Back task.')
+print('4 - Go out')
 while True:
-    cpf = int(input('Enter you cpf: '))
-    if think_size(cpf)<11 or think_size(cpf)>11:
-        print('Invalid')
-    else:
+    while True:
+        op = int(input('Enter you option: '))
+        if op > 4 or op < 1:
+            print('Option invalid. ')
+        else:
+            break
+    if op == 1:
+        task = str(input('Enter your task.'))
+        worklist.append(task)
+        print(worklist)
+    elif op == 2:
+        del_worklist.append(worklist[-1])
+        worklist.pop()
+        print(worklist)
+    elif op == 3:
+        if del_worklist[-1] not in worklist:
+            worklist.append(del_worklist[-1])
+        print(worklist)
+    elif op == 4:
         break
-cpf = str(cpf)
-cpf_provisory = cpf[:-2]
-new = list(cpf_provisory)
-new_int = []
-for value in new:
-    new_int.append(int(value))
-for value in new_int:
-    result = value * aux
-    #print(f'{value} * {aux} = {result}')
-    soma = soma + result
-    aux = aux -1
-#print(soma)
 
-digit_01 = 11 -(soma % 11) 
-if digit_01>9:
-    digit_01 = 0
-    new_int.append(0)
-else:
-    digit_01 = 11 -(soma % 11)       
-    new_int.append(digit_01)
-soma = 0
-result = 0
-aux = 11
-for value in new_int:
-    result = value * aux
-    #print(f'{value} * {aux} = {result}')
-    soma = soma + result
-    aux = aux -1
-digit_02 = 11 - (soma % 11)
-if digit_02>9:
-    new_int.append(0)
-else:
-    new_int.append(digit_02)  
-new_int_final=[]
-for value in new_int:
-    new_int_final.append(str(value))
-cpf = int(cpf)
-new_int_final = ''.join(new_int_final)
-#print(new_int_final)
-new_int_final = int(new_int_final)
-print(cpf)
-print(new_int_final)
-cpf = str(cpf)
-new_int_final = str(new_int_final)
-sequency = new_int_final == str(new_int_final[0]) * 11
-if cpf == new_int_final and not sequency:
-    print('CPF VALID !!!!')
-else:
-    print('CPF INVALID !!')    
