@@ -1,3 +1,4 @@
+from class_poo import Peope
 while True:
     note1 = float(input('Enter your first note: '))
     if note1 >10:
@@ -29,4 +30,6 @@ def return_average(first_note, second_note, third_note, word):
     return average
 average_final = return_average(note1, note2, note3, word)
 
-print(f'Your avarege is: {average_final:.2f}')        
+print(f'Your avarege is: {average_final:.2f}')
+
+p1 = Peope()
